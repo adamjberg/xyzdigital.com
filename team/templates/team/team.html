@@ -6,16 +6,9 @@
     background-size: cover;
     background-position: 50% 50%;
     position: relative;
+    margin-bottom: 4rem;
   }
 
-  .header .header-text {
-    color: white;
-    
-    padding: 20px 0;
-    position: relative;
-    top: 225px;
-    padding: 50px 0;
-  }
 
   .header h1 {
     background-color: rgba(100, 100, 100, 0.5);
@@ -48,6 +41,14 @@
 <section class="text-center header">
   <h1>Team</h1>
   <p>XYZ is a family owned digital media production company with over 30 years of experience.</p>
-
 </section>
+
+<div class="container">
+  <div class="row">
+    {% for member in members %}
+      {% include 'team/member.html' with member=member %}
+    {% endfor %}
+  </div>
+</div>
+
 {% endblock content %}

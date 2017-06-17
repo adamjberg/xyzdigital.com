@@ -1,0 +1,11 @@
+<div class="col-md-4 text-center">
+  {% if member.image %}
+  <img class="rounded-circle" src="{{member.image.url}}" width="140" height="140">
+  {% endif %}
+  <h2>{{member.name}}</h2>
+
+  {% if member.description %}
+  <p>{{member.description}}</p>
+  {% else %} {% lorem 2 p %} {% endif %}
+
+</div>

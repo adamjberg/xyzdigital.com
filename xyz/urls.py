@@ -15,10 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 from django.views.generic import TemplateView
+from team.views import TeamView
+
 
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name="home/home.html")),
-    url(r'^team/', TemplateView.as_view(template_name="team/team.html")),
+    url(r'^team/', TeamView.as_view()),
     url(r'^admin/', admin.site.urls),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
