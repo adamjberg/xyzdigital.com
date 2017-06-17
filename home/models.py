@@ -8,4 +8,5 @@ from singleton.models import SingletonModel
 
 
 class HomePage(SingletonModel):
-    video = models.URLField(null=True, blank=True)
+    poster = models.ImageField(null=True, blank=True, upload_to='home/')
+    mp4 = models.FileField(null=True, blank=True, upload_to='home/')
