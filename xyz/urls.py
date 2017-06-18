@@ -20,6 +20,7 @@ from django.conf.urls.static import static
 from django.views.generic import TemplateView
 from team.views import TeamView
 from home.views import HomeView
+from stories.views import StoriesView
 from contact.views import ContactView
 from django.views.decorators.cache import cache_page
 
@@ -27,6 +28,7 @@ from django.views.decorators.cache import cache_page
 urlpatterns = [
     url(r'^$', cache_page(60 * 15)(HomeView.as_view())),
     url(r'^team/', cache_page(60 * 15)(TeamView.as_view())),
+    url(r'^stories/', cache_page(60 * 15)(StoriesView.as_view())),
     url(r'^contact/', cache_page(60 * 15)(ContactView.as_view())),
     url(r'^admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
