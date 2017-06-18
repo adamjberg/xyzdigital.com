@@ -19,11 +19,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
 from team.views import TeamView
+from home.views import HomeView
+from django.views.decorators.cache import cache_page
 
 
 urlpatterns = [
-    url(r'^$', TemplateView.as_view(template_name="home/home.html")),
-    url(r'^team/', TeamView.as_view()),
+    url(r'^$', cache_page(60 * 15)(HomeView.as_view())),
+    url(r'^team/', cache_page(60 * 15)(TeamView.as_view())),
     url(r'^admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

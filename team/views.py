@@ -5,6 +5,7 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 from team.models import TeamPage, Member
 
+
 class TeamView(TemplateView):
     template_name = "team/team.html"
 
