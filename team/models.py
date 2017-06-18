@@ -2,12 +2,11 @@
 from __future__ import unicode_literals
 
 from django.db import models
-from singleton.models import SingletonModel
-from header.models import Header
+from page.models import Page
 
 
-class TeamPage(SingletonModel):
-    header = models.ForeignKey(Header, null=True, blank=True,)
+class TeamPage(Page):
+    pass
 
 
 class Member(models.Model):

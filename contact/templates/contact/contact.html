@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% include 'header/header.html' with header=contact.header %}
+
+<div class="container">
+  <form action="" method="POST">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    {% for field in form %}
+    <div class="form-group {% if field.errors %}has-warning{% endif %}">
+      {{ field.label_tag }}
+      {{field}}
+      {% for error in field.errors %}
+      <div class="form-control-feedback">{{error}}</div>
+      {% endfor %}
+    </div>
+    {% endfor %}
+    <div class="text-center">
+      <button role="button" type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>
+
+{% endblock content %}
