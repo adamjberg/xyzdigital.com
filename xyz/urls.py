@@ -21,6 +21,7 @@ from django.views.generic import TemplateView
 from team.views import TeamView
 from home.views import HomeView
 from stories.views import StoriesView
+from services.views import ServicesView
 from contact.views import ContactView
 from django.views.decorators.cache import cache_page
 
@@ -28,6 +29,7 @@ from django.views.decorators.cache import cache_page
 urlpatterns = [
     url(r'^$', cache_page(60 * 15)(HomeView.as_view())),
     url(r'^team/', cache_page(60 * 15)(TeamView.as_view())),
+    url(r'^services/', cache_page(60 * 15)(ServicesView.as_view())),
     url(r'^stories/', cache_page(60 * 15)(StoriesView.as_view())),
     url(r'^contact/', cache_page(60 * 15)(ContactView.as_view())),
     url(r'^admin/', admin.site.urls),

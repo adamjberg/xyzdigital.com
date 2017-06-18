@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% include 'header/header.html' with header=header %}
+
+<div class="container">
+  <div class="row">
+  {% for service in services %}
+    <div class="col-md-4">
+      <h2>{{service.name}}</h2>
+      {% if service.image %}
+      <img class="img-fluid" src="{{service.image.url}}"/>
+      {% endif %}
+      <p>{{service.summary}}</p>
+    </div>
+  {% endfor %}
+  </div>
+</div>
+
+{% endblock content %}
