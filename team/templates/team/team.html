@@ -1,53 +1,11 @@
-{% extends 'base.html' %} {% block content %}
-<style>
-  .header {
-    height: 600px;
-    background: url('https://previews.123rf.com/images/kongxinzhu/kongxinzhu0809/kongxinzhu080900281/3621016-lynn-valley-suspension-bridge-north-vancouver-Stock-Photo.jpg');
-    background-size: cover;
-    background-position: 50% 50%;
-    position: relative;
-    margin-bottom: 4rem;
-  }
+{% extends 'base.html' %}
+{% block content %}
 
-
-  .header h1 {
-    background-color: rgba(100, 100, 100, 0.5);
-    position: absolute;
-    bottom: 50%;
-    margin: 0;
-    color: white;
-    width: 100%;
-    padding: 10px 0;
-  }
-
-  .header p {
-    background-color: rgba(100, 100, 100, 0.5);
-    position: absolute;
-    top: 50%;
-    margin: 0;
-    color: white;
-    width: 100%;
-    padding: 10px 0;
-  }
-
-  .header hr {
-    border-color: white;
-    position: absolute;
-    top: 50%;
-    margin: 0;
-    width: 100%;
-  }
-</style>
-<section class="text-center header">
-  <h1>Team</h1>
-  <p>XYZ is a family owned digital media production company with over 30 years of experience.</p>
-</section>
+{% include 'header/header.html' with header=team.header %}
 
 <div class="container">
   <div class="row">
-    {% for member in members %}
-      {% include 'team/member.html' with member=member %}
-    {% endfor %}
+    {% for member in members %} {% include 'team/member.html' with member=member %} {% endfor %}
   </div>
 </div>
 

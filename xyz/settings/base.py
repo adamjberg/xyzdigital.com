@@ -39,6 +39,7 @@ LOCAL_APPS = (
     'singleton',
     'home',
     'nav',
+    'header',
     'team',
     'services',
     'stories',

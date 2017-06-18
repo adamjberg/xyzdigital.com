@@ -1,0 +1,43 @@
+<style>
+  .header {
+    height: 600px;
+    background: url('{{header.image.url}}');
+    background-size: cover;
+    background-position: 50% 50%;
+    position: relative;
+    margin-bottom: 4rem;
+  }
+
+
+  .header h1 {
+    background-color: rgba(100, 100, 100, 0.5);
+    position: absolute;
+    bottom: 50%;
+    margin: 0;
+    color: white;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .header p {
+    background-color: rgba(100, 100, 100, 0.5);
+    position: absolute;
+    top: 50%;
+    margin: 0;
+    color: white;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .header hr {
+    border-color: white;
+    position: absolute;
+    top: 50%;
+    margin: 0;
+    width: 100%;
+  }
+</style>
+<section class="text-center header">
+  <h1>{{header.title}}</h1>
+  <p>{{header.extra}}</p>
+</section>
