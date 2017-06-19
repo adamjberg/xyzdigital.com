@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.shortcuts import render
 
 from django.views.generic import TemplateView
-from services.models import ServicesPage
+from services.models import ServicesPage, Service
 
 
 class ServicesView(TemplateView):
@@ -13,4 +13,5 @@ class ServicesView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(ServicesView, self).get_context_data(**kwargs)
         context["header"] = ServicesPage.load().header
+        context["services"] = Service.objects.all()
         return context
